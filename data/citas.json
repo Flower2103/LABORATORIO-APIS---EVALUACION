@@ -6,7 +6,7 @@
     "fecha": "2025-11-10",
     "hora": "10:00",
     "motivo": "Revisión general",
-    "estado": "programada"
+    "estado": "cancelada"
   },
   {
     "id": "C002",
@@ -57,6 +57,15 @@
     "id": "C007",
     "pacienteId": "P004",
     "doctorId": "D003",
+    "fecha": "2025-11-17",
+    "hora": "13:00",
+    "motivo": "Revisión general",
+    "estado": "programada"
+  },
+  {
+    "id": "C008",
+    "pacienteId": "P001",
+    "doctorId": "D001",
     "fecha": "2025-11-17",
     "hora": "13:00",
     "motivo": "Revisión general",

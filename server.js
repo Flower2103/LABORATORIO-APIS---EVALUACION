@@ -107,11 +107,17 @@ app.get("/pacientes/:id/historial", async (req, res) => {
 
     const citas = await readJSON("./data/citas.json");
     const historial = citas.filter(c => c.pacienteId === req.params.id);
+
+    if (historial.length === 0) {
+      return res.json({ mensaje: "No hay historial de citas" });
+    }
+
     res.json(historial);
   } catch {
     res.status(500).json({ error: "Error al leer historial" });
   }
 });
+
 
 // ------------------ DOCTORES ------------------
 
@@ -191,6 +197,8 @@ app.get("/doctores/especialidad/:esp", async (req, res) => {
 
 // ------------------ CITAS ------------------
 
+
+
 // CREAR cita
 app.post("/citas", async (req, res) => {
   try {
@@ -259,6 +267,35 @@ app.post("/citas", async (req, res) => {
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Error al crear cita" });
+  }
+});
+
+// GET /citas - Ver todas las citas
+app.get("/citas", async (req, res) => {
+  try {
+    const citas = await readJSON("./data/citas.json");
+
+    if (citas.length === 0) {
+      return res.json({ mensaje: "No hay citas registradas" });
+    }
+
+    res.json(citas);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error al leer las citas" });
+  }
+});
+
+// GET /citas/:id
+app.get("/citas/:id", async (req, res) => {
+  try {
+    const citas = await readJSON("./data/citas.json");
+    const cita = citas.find(c => c.id === req.params.id);
+    if (!cita) return res.status(404).json({ error: "Cita no encontrada" });
+    res.json(cita);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Error al leer la cita" });
   }
 });
 

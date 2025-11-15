@@ -40,5 +40,19 @@
       "Jueves",
       "Viernes"
     ]
+  },
+  {
+    "id": "D004",
+    "nombre": "Dr. Eva Luna",
+    "especialidad": "Geriatria",
+    "horarioInicio": "08:00",
+    "horarioFin": "14:00",
+    "diasDisponibles": [
+      "Lunes",
+      "Martes",
+      "Miercoles",
+      "Jueves",
+      "Viernes"
+    ]
   }
 ]

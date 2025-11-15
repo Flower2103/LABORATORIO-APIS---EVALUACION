@@ -30,5 +30,13 @@
     "telefono": "555-1111",
     "email": "peralta@email.com",
     "fechaRegistro": "2025-11-11"
+  },
+  {
+    "id": "P005",
+    "nombre": "Brenda Sanchez",
+    "edad": 20,
+    "telefono": "555-11444",
+    "email": "brenda@email.com",
+    "fechaRegistro": "2025-11-15"
   }
 ]
